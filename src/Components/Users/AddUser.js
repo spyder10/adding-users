@@ -2,7 +2,7 @@ import styles from "./AddUser.module.css";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import { useState, Fragment } from "react";
-import ErrorModal from "../UI/ErrorModal";
+import Modal from '../UI/ErrorModal';
 
 function AddUser(props) {
   const [enteredText, setEnteredText] = useState("");
@@ -35,11 +35,11 @@ const clickHandler = () =>{
 }
   return (
     <Fragment>
-      {error && <ErrorModal
+      {error && <Modal
         title="Error"
         message="Please Enter valid username and age"
         onButtonClick={clickHandler}
-      ></ErrorModal>}
+      ></Modal>}
       <Card className={styles["input"]}>
         <form onSubmit={formSubmitHandler}>
           <label>Username</label>
